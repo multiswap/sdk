@@ -8,7 +8,10 @@ export enum ChainId {
   ROPSTEN = 3,
   RINKEBY = 4,
   GÖRLI = 5,
-  KOVAN = 42
+  KOVAN = 42,
+  LOCAL = 5777,
+  RSK_MAINNET = 30,
+  RSK_TESTNET = 31
 }
 
 export enum TradeType {
@@ -22,9 +25,27 @@ export enum Rounding {
   ROUND_UP
 }
 
-export const FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
+export const FACTORY_ADDRESS: { [chainId in ChainId]: string } = {
+  [ChainId.MAINNET]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
+  [ChainId.ROPSTEN]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
+  [ChainId.RINKEBY]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
+  [ChainId.GÖRLI]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
+  [ChainId.KOVAN]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
+  [ChainId.LOCAL]: '',
+  [ChainId.RSK_MAINNET]: '0xfaA7762f551bBa9b0EBa34D6443d49d0A577c0e1',
+  [ChainId.RSK_TESTNET]: '0xfaA7762f551bBa9b0EBa34D6443d49d0A577c0e1'
+}
 
-export const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f'
+export const INIT_CODE_HASH: { [chainId in ChainId]: string } = {
+  [ChainId.MAINNET]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  [ChainId.ROPSTEN]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  [ChainId.RINKEBY]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  [ChainId.GÖRLI]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  [ChainId.KOVAN]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  [ChainId.LOCAL]: '',
+  [ChainId.RSK_MAINNET]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  [ChainId.RSK_TESTNET]: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f'
+}
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
 

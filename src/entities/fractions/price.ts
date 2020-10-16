@@ -63,7 +63,8 @@ export class Price extends Fraction {
     if (this.quoteCurrency instanceof Token) {
       return new TokenAmount(this.quoteCurrency, super.multiply(currencyAmount.raw).quotient)
     }
-    return CurrencyAmount.ether(super.multiply(currencyAmount.raw).quotient)
+
+    return CurrencyAmount.base(super.multiply(currencyAmount.raw).quotient, this.quoteCurrency)
   }
 
   public toSignificant(significantDigits: number = 6, format?: object, rounding?: Rounding): string {
