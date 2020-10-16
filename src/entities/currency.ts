@@ -1,9 +1,8 @@
 import JSBI from 'jsbi'
-
 import { ChainId, SolidityType } from '../constants'
 import { validateSolidityTypeInstance } from '../utils'
 
-/**
+/** 
  * A currency is any fungible financial instrument on Ethereum, including Ether and all ERC20 tokens.
  *
  * The only instance of the base class `Currency` are protocol currencies.
@@ -44,7 +43,7 @@ export class Currency {
     this.name = name
   }
 
-  static isBaseCurrency(currency: Currency) {
+  static isBaseCurrency(currency: Currency | undefined | null) {
     return currency === Currency.ETHER || currency === Currency.RBTC
   }
 
